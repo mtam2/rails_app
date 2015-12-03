@@ -32,6 +32,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'pg'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 group :production do
   # gem 'pg'     
   gem 'rails_12factor', '0.0.2'
