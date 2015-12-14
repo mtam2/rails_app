@@ -41,10 +41,10 @@ class UsersControllerTest < ActionController::TestCase
   test "should not allow the admin attribute to be edited via the web" do
     log_in_as(@other_user)
     assert_not @other_user.admin?
-    patch :update, id: @other_user, user: { password:              FILL_IN,
-                                            password_confirmation: FILL_IN,
-                                            admin: FILL_IN }
-    assert_not @other_user.FILL_IN.admin?
+    patch :update, id: @other_user, user: { password:              @other_user.password,
+                                            password_confirmation: @other_user.password,
+                                            admin: true }
+    assert_not @other_user.reload.admin?
   end
   
   test "should redirect index when not logged in" do
